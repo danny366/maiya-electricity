@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0063)file:///C:/Users/dron/Downloads/nihul-hashmal-maya-cohen_8.html -->
+<!-- saved from url=(0063)file:///C:/Users/dron/Downloads/nihul-hashmal-maya-cohen_9.html -->
 <html lang="he" dir="rtl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
@@ -104,29 +104,95 @@ body { direction: rtl; font-family: var(--font-sans); padding-top: env(safe-area
 
 <div class="app" dir="rtl">
 
-<div id="screen-home" class="screen">
+<div id="screen-home" class="screen active">
   <div class="topbar">
     <i class="ti ti-bolt" aria-hidden="true" style="font-size:20px;color:var(--accent-amber)"></i>
     <h1>ניהול חשמל — מיה כהן</h1>
+    <button class="back-btn" onclick="showScreen(&#39;screen-guide&#39;)" title="מדריך שימוש"><i class="ti ti-help" aria-hidden="true"></i><span style="font-size:16px;line-height:1">❔</span></button>
     <button class="back-btn" onclick="showScreen(&#39;screen-settings&#39;)" title="הגדרות"><i class="ti ti-settings" aria-hidden="true"></i><span style="font-size:18px;line-height:1">⚙</span></button>
   </div>
   <div class="nav">
-    <button class="" onclick="switchTab(this,&#39;tab-dashboard&#39;)">סקירה</button>
+    <button class="active" onclick="switchTab(this,&#39;tab-dashboard&#39;)">סקירה</button>
     <button onclick="switchTab(this,&#39;tab-history&#39;)" class="">היסטוריה</button>
-    <button onclick="switchTab(this,&#39;tab-recon&#39;)" class="active">התחשבנות</button>
+    <button onclick="switchTab(this,&#39;tab-recon&#39;)" class="">התחשבנות</button>
   </div>
-  <div id="tab-dashboard" class="section" style="display: none;">
+  <div id="tab-dashboard" class="section" style="display: block;">
     <div id="dashboard-content"><div class="metric-grid">
-    <div class="metric"><div class="label">💳 חשבון אחרון</div><div class="value">₪1900</div><div class="sub">15/06/2026</div></div>
-    <div class="metric"><div class="label">🧾 חויב דיירים</div><div class="value">₪1264</div><div class="sub">3 ימים</div></div>
+    <div class="metric"><div class="label">💳 חשבון אחרון</div><div class="value">₪1900</div><div class="sub">29/06/2026</div></div>
+    <div class="metric"><div class="label">🧾 חויב דיירים</div><div class="value">₪1135</div><div class="sub">2 ימים</div></div>
   </div><div class="metric-grid">
-    <div class="metric"><div class="label">⚖️ הפרש תקופה</div><div class="value negative">₪-636</div><div class="sub">להחזיר לדיירים</div></div>
+    <div class="metric"><div class="label">⚖️ הפרש תקופה</div><div class="value negative">₪-765</div><div class="sub">להחזיר לדיירים</div></div>
     <div class="metric"><div class="label">💰 מחיר קוט"ש</div><div class="value">₪0.6400</div><div class="sub">כולל מע"מ 18%</div></div>
-  </div><div class="card"><div class="card-title"><i class="ti ti-home" aria-hidden="true"></i> חיוב אחרון לדירה</div><div class="apt-row"><div><div class="apt-name">נועם</div><div class="apt-detail">800.0 קוט"ש + ₪44.84 קבוע</div></div><div class="apt-amount">₪556.87</div></div><div class="apt-row"><div><div class="apt-name">גיל</div><div class="apt-detail">700.0 קוט"ש + ₪44.84 קבוע</div></div><div class="apt-amount">₪492.86</div></div><div class="apt-row"><div><div class="apt-name">איל</div><div class="apt-detail">300.0 קוט"ש + ₪22.42 קבוע</div></div><div class="apt-amount">₪214.43</div></div></div></div>
+  </div><div class="card"><div class="card-title"><i class="ti ti-home" aria-hidden="true"></i> חיוב אחרון לדירה</div><div class="apt-row"><div><div class="apt-name">נועם</div><div class="apt-detail">400.0 קוט"ש + ₪44.37 קבוע</div></div><div class="apt-amount">₪300.38</div></div><div class="apt-row"><div><div class="apt-name">גיל</div><div class="apt-detail">900.0 קוט"ש + ₪44.37 קבוע</div></div><div class="apt-amount">₪620.40</div></div><div class="apt-row"><div><div class="apt-name">איל</div><div class="apt-detail">300.0 קוט"ש + ₪22.18 קבוע</div></div><div class="apt-amount">₪214.19</div></div></div></div>
     <button class="btn btn-primary" onclick="openNewReading()"><i class="ti ti-plus" aria-hidden="true" style="margin-left:6px"></i>קריאה חדשה</button>
     <button class="btn" onclick="showScreen(&#39;screen-reports&#39;)"><i class="ti ti-file-text" aria-hidden="true" style="margin-left:6px"></i>דוחות</button>
   </div>
   <div id="tab-history" class="section" style="display: none;"><div id="history-content"><div class="card"><div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div><div style="font-weight:500;font-size:15px">29/06/2026</div>
+        <div style="font-size:12px;color:var(--color-text-secondary);margin-top:2px">2 ימים ❙ ₪0.5424 לפני מע"מ</div></div>
+        <span class="badge badge-green">הפרש ₪765</span></div>
+        <div class="metric-grid" style="margin-top:0.5rem;margin-bottom:0.5rem">
+          <div class="metric"><div class="label">🧾 נגבה מהדיירים</div><div class="value" style="font-size:16px">₪1135</div></div>
+          <div class="metric"><div class="label">💡 שולם לחברת חשמל</div><div class="value" style="font-size:16px">₪1900</div></div>
+        </div>
+        <hr class="divider">
+        <div style="display:flex;gap:8px;font-size:13px"><span style="flex:1;text-align:center"><span style="color:var(--color-text-secondary)">נועם</span><br><b>₪300</b></span><span style="flex:1;text-align:center"><span style="color:var(--color-text-secondary)">גיל</span><br><b>₪620</b></span><span style="flex:1;text-align:center"><span style="color:var(--color-text-secondary)">איל</span><br><b>₪214</b></span></div>
+        <div class="history-actions">
+          <button class="btn" onclick="showPeriodDetail(9, &#39;screen-home-history&#39;)"><i class="ti ti-file-text" aria-hidden="true" style="margin-left:4px"></i>דוח</button>
+          <button class="btn" onclick="openEdit(9)"><i class="ti ti-edit" aria-hidden="true" style="margin-left:4px"></i>ערוך / מחק</button>
+        </div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div><div style="font-weight:500;font-size:15px">27/06/2026</div>
+        <div style="font-size:12px;color:var(--color-text-secondary);margin-top:2px">2 ימים ❙ ₪0.5424 לפני מע"מ</div></div>
+        <span class="badge badge-green">הפרש ₪986</span></div>
+        <div class="metric-grid" style="margin-top:0.5rem;margin-bottom:0.5rem">
+          <div class="metric"><div class="label">🧾 נגבה מהדיירים</div><div class="value" style="font-size:16px">₪814</div></div>
+          <div class="metric"><div class="label">💡 שולם לחברת חשמל</div><div class="value" style="font-size:16px">₪1800</div></div>
+        </div>
+        <hr class="divider">
+        <div style="display:flex;gap:8px;font-size:13px"><span style="flex:1;text-align:center"><span style="color:var(--color-text-secondary)">נועם</span><br><b>₪620</b></span><span style="flex:1;text-align:center"><span style="color:var(--color-text-secondary)">גיל</span><br><b>₪44</b></span><span style="flex:1;text-align:center"><span style="color:var(--color-text-secondary)">איל</span><br><b>₪150</b></span></div>
+        <div class="history-actions">
+          <button class="btn" onclick="showPeriodDetail(8, &#39;screen-home-history&#39;)"><i class="ti ti-file-text" aria-hidden="true" style="margin-left:4px"></i>דוח</button>
+          <button class="btn" onclick="openEdit(8)"><i class="ti ti-edit" aria-hidden="true" style="margin-left:4px"></i>ערוך / מחק</button>
+        </div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div><div style="font-weight:500;font-size:15px">25/06/2026</div>
+        <div style="font-size:12px;color:var(--color-text-secondary);margin-top:2px">3 ימים ❙ ₪0.5424 לפני מע"מ</div></div>
+        <span class="badge badge-green">הפרש ₪124</span></div>
+        <div class="metric-grid" style="margin-top:0.5rem;margin-bottom:0.5rem">
+          <div class="metric"><div class="label">🧾 נגבה מהדיירים</div><div class="value" style="font-size:16px">₪1776</div></div>
+          <div class="metric"><div class="label">💡 שולם לחברת חשמל</div><div class="value" style="font-size:16px">₪1900</div></div>
+        </div>
+        <hr class="divider">
+        <div style="display:flex;gap:8px;font-size:13px"><span style="flex:1;text-align:center"><span style="color:var(--color-text-secondary)">נועם</span><br><b>₪557</b></span><span style="flex:1;text-align:center"><span style="color:var(--color-text-secondary)">גיל</span><br><b>₪1005</b></span><span style="flex:1;text-align:center"><span style="color:var(--color-text-secondary)">איל</span><br><b>₪214</b></span></div>
+        <div class="history-actions">
+          <button class="btn" onclick="showPeriodDetail(7, &#39;screen-home-history&#39;)"><i class="ti ti-file-text" aria-hidden="true" style="margin-left:4px"></i>דוח</button>
+          <button class="btn" onclick="openEdit(7)"><i class="ti ti-edit" aria-hidden="true" style="margin-left:4px"></i>ערוך / מחק</button>
+        </div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div><div style="font-weight:500;font-size:15px">22/06/2026</div>
+        <div style="font-size:12px;color:var(--color-text-secondary);margin-top:2px">2 ימים ❙ ₪0.5424 לפני מע"מ</div></div>
+        <span class="badge badge-green">הפרש ₪365</span></div>
+        <div class="metric-grid" style="margin-top:0.5rem;margin-bottom:0.5rem">
+          <div class="metric"><div class="label">🧾 נגבה מהדיירים</div><div class="value" style="font-size:16px">₪1135</div></div>
+          <div class="metric"><div class="label">💡 שולם לחברת חשמל</div><div class="value" style="font-size:16px">₪1500</div></div>
+        </div>
+        <hr class="divider">
+        <div style="display:flex;gap:8px;font-size:13px"><span style="flex:1;text-align:center"><span style="color:var(--color-text-secondary)">נועם</span><br><b>₪428</b></span><span style="flex:1;text-align:center"><span style="color:var(--color-text-secondary)">גיל</span><br><b>₪620</b></span><span style="flex:1;text-align:center"><span style="color:var(--color-text-secondary)">איל</span><br><b>₪86</b></span></div>
+        <div class="history-actions">
+          <button class="btn" onclick="showPeriodDetail(6, &#39;screen-home-history&#39;)"><i class="ti ti-file-text" aria-hidden="true" style="margin-left:4px"></i>דוח</button>
+          <button class="btn" onclick="openEdit(6)"><i class="ti ti-edit" aria-hidden="true" style="margin-left:4px"></i>ערוך / מחק</button>
+        </div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div><div style="font-weight:500;font-size:15px">20/06/2026</div>
+        <div style="font-size:12px;color:var(--color-text-secondary);margin-top:2px">5 ימים ❙ ₪0.5424 לפני מע"מ</div></div>
+        <span class="badge badge-green">הפרש ₪536</span></div>
+        <div class="metric-grid" style="margin-top:0.5rem;margin-bottom:0.5rem">
+          <div class="metric"><div class="label">🧾 נגבה מהדיירים</div><div class="value" style="font-size:16px">₪1264</div></div>
+          <div class="metric"><div class="label">💡 שולם לחברת חשמל</div><div class="value" style="font-size:16px">₪1800</div></div>
+        </div>
+        <hr class="divider">
+        <div style="display:flex;gap:8px;font-size:13px"><span style="flex:1;text-align:center"><span style="color:var(--color-text-secondary)">נועם</span><br><b>₪493</b></span><span style="flex:1;text-align:center"><span style="color:var(--color-text-secondary)">גיל</span><br><b>₪557</b></span><span style="flex:1;text-align:center"><span style="color:var(--color-text-secondary)">איל</span><br><b>₪214</b></span></div>
+        <div class="history-actions">
+          <button class="btn" onclick="showPeriodDetail(5, &#39;screen-home-history&#39;)"><i class="ti ti-file-text" aria-hidden="true" style="margin-left:4px"></i>דוח</button>
+          <button class="btn" onclick="openEdit(5)"><i class="ti ti-edit" aria-hidden="true" style="margin-left:4px"></i>ערוך / מחק</button>
+        </div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:flex-start">
         <div><div style="font-weight:500;font-size:15px">15/06/2026</div>
         <div style="font-size:12px;color:var(--color-text-secondary);margin-top:2px">3 ימים ❙ ₪0.5424 לפני מע"מ</div></div>
         <span class="badge badge-green">הפרש ₪636</span></div>
@@ -183,14 +249,14 @@ body { direction: rtl; font-family: var(--font-sans); padding-top: env(safe-area
         <div style="font-size:12px;color:var(--color-text-secondary);margin-top:2px">נועם: 12212.66 ❙ גיל: 23453.61 ❙ איל: 4549.99</div></div>
         <span class="badge badge-green">בסיס</span></div>
         <div class="history-actions"><button class="btn" onclick="openEdit(0)"><i class="ti ti-edit" aria-hidden="true" style="margin-left:4px"></i>ערוך</button></div></div></div></div>
-  <div id="tab-recon" class="section" style="display: block;"><div id="recon-content"><div class="alert alert-info">מציג נתונים מאז ההתחשבנות האחרונה (20/06/2026)</div><div class="metric-grid">
-    <div class="metric"><div class="label">💡 שולם לחברת חשמל</div><div class="value">₪1900</div></div>
-    <div class="metric"><div class="label">🧾 נגבה מדיירים</div><div class="value">₪1264</div></div>
-  </div><div class="card"><div class="card-title">התחשבנות לפי דירה</div><div class="apt-row"><div><div class="apt-name">נועם</div><div class="apt-detail">צריכה ₪512.03 + קבוע ₪44.84 = ₪556.87</div></div></div><div class="apt-row"><div><div class="apt-name">גיל</div><div class="apt-detail">צריכה ₪448.02 + קבוע ₪44.84 = ₪492.86</div></div></div><div class="apt-row"><div><div class="apt-name">איל</div><div class="apt-detail">צריכה ₪192.01 + קבוע ₪22.42 = ₪214.43</div></div></div><hr class="divider"><div class="recon-row"><span style="font-weight:500">הפרש כולל (נגבה פחות שולם לחברת חשמל)</span><span class="negative" style="font-weight:500">₪-635.84</span></div></div><div class="card"><div class="card-title"><i class="ti ti-scale" aria-hidden="true"></i> חלוקת ההפרש לפי יחס הצריכה</div>
-    <div class="hint" style="margin-bottom:0.75rem">ההפרש הכולל מחולק בין הדירות לפי יחס הצריכה שלהן בפועל, כך שכל דירה נושאת בחלק יחסי והוגן.</div><div class="apt-row"><div><div class="apt-name">נועם</div><div class="apt-detail">44.4% מהצריכה הכוללת</div></div>
-      <div style="text-align:left"><div class="positive" style="font-size:14px;font-weight:500">להחזר ₪282.60</div></div></div><div class="apt-row"><div><div class="apt-name">גיל</div><div class="apt-detail">38.9% מהצריכה הכוללת</div></div>
-      <div style="text-align:left"><div class="positive" style="font-size:14px;font-weight:500">להחזר ₪247.27</div></div></div><div class="apt-row"><div><div class="apt-name">איל</div><div class="apt-detail">16.7% מהצריכה הכוללת</div></div>
-      <div style="text-align:left"><div class="positive" style="font-size:14px;font-weight:500">להחזר ₪105.97</div></div></div></div><div class="card-title" style="padding:0 0 0.5rem;margin-top:0.5rem"><i class="ti ti-message" aria-hidden="true"></i> שליחת דוח התחשבנות לשוכרים</div><div class="btn-row">
+  <div id="tab-recon" class="section" style="display: none;"><div id="recon-content"><div class="alert alert-info">מציג נתונים מאז ההתחשבנות האחרונה (20/06/2026)</div><div class="metric-grid">
+    <div class="metric"><div class="label">💡 שולם לחברת חשמל</div><div class="value">₪5600</div></div>
+    <div class="metric"><div class="label">🧾 נגבה מדיירים</div><div class="value">₪3725</div></div>
+  </div><div class="card"><div class="card-title">התחשבנות לפי דירה</div><div class="apt-row"><div><div class="apt-name">נועם</div><div class="apt-detail">צריכה ₪1344.07 + קבוע ₪133.10 = ₪1477.17</div></div></div><div class="apt-row"><div><div class="apt-name">גיל</div><div class="apt-detail">צריכה ₪1536.08 + קבוע ₪133.10 = ₪1669.18</div></div></div><div class="apt-row"><div><div class="apt-name">איל</div><div class="apt-detail">צריכה ₪512.03 + קבוע ₪66.55 = ₪578.58</div></div></div><hr class="divider"><div class="recon-row"><span style="font-weight:500">הפרש כולל (נגבה פחות שולם לחברת חשמל)</span><span class="negative" style="font-weight:500">₪-1875.07</span></div></div><div class="card"><div class="card-title"><i class="ti ti-scale" aria-hidden="true"></i> חלוקת ההפרש לפי יחס הצריכה</div>
+    <div class="hint" style="margin-bottom:0.75rem">ההפרש הכולל מחולק בין הדירות לפי יחס הצריכה שלהן בפועל, כך שכל דירה נושאת בחלק יחסי והוגן.</div><div class="apt-row"><div><div class="apt-name">נועם</div><div class="apt-detail">39.6% מהצריכה הכוללת</div></div>
+      <div style="text-align:left"><div class="positive" style="font-size:14px;font-weight:500">להחזר ₪742.95</div></div></div><div class="apt-row"><div><div class="apt-name">גיל</div><div class="apt-detail">45.3% מהצריכה הכוללת</div></div>
+      <div style="text-align:left"><div class="positive" style="font-size:14px;font-weight:500">להחזר ₪849.09</div></div></div><div class="apt-row"><div><div class="apt-name">איל</div><div class="apt-detail">15.1% מהצריכה הכוללת</div></div>
+      <div style="text-align:left"><div class="positive" style="font-size:14px;font-weight:500">להחזר ₪283.03</div></div></div></div><div class="card-title" style="padding:0 0 0.5rem;margin-top:0.5rem"><i class="ti ti-message" aria-hidden="true"></i> שליחת דוח התחשבנות לשוכרים</div><div class="btn-row">
         <button class="btn" onclick="previewSettlementMsg(&#39;noam&#39;)"><i class="ti ti-eye" aria-hidden="true" style="margin-left:4px"></i>הצג — נועם</button>
         <button class="btn btn-whatsapp" onclick="sendSettlementMsg(&#39;noam&#39;)"><i class="ti ti-brand-whatsapp" aria-hidden="true" style="margin-left:4px"></i>שלח — נועם</button>
       </div><div class="btn-row">
@@ -200,6 +266,22 @@ body { direction: rtl; font-family: var(--font-sans); padding-top: env(safe-area
         <button class="btn" onclick="previewSettlementMsg(&#39;ayal&#39;)"><i class="ti ti-eye" aria-hidden="true" style="margin-left:4px"></i>הצג — איל</button>
         <button class="btn btn-whatsapp" onclick="sendSettlementMsg(&#39;ayal&#39;)"><i class="ti ti-brand-whatsapp" aria-hidden="true" style="margin-left:4px"></i>שלח — איל</button>
       </div><button class="btn btn-whatsapp" onclick="sendOwnerReconReport()"><i class="ti ti-brand-whatsapp" aria-hidden="true" style="margin-left:6px"></i>שלח דוח התחשבנות לבעל הבית</button><button class="btn btn-success" onclick="openSettleConfirm()"><i class="ti ti-checkbox" aria-hidden="true" style="margin-left:6px"></i>סגור התחשבנות (איפוס לאחר תשלום)</button><hr class="divider"><div class="card-title" style="padding:0.5rem 0"><i class="ti ti-history" aria-hidden="true"></i> היסטוריית התחשבנויות</div><div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div>
+          <div style="font-weight:500;font-size:14px">נסגר ב-20/06/2026</div>
+          <div style="font-size:12px;color:var(--color-text-secondary);margin-top:2px">📅 מ-23/06/2026 עד 22/06/2026</div>
+        </div>
+        <span class="badge badge-green">₪-1537</span>
+      </div>
+      <div class="metric-grid" style="margin-top:0.5rem;margin-bottom:0.5rem">
+        <div class="metric"><div class="label">🧾 נגבה מדיירים</div><div class="value" style="font-size:15px">₪3663</div></div>
+        <div class="metric"><div class="label">💡 שולם לחברת חשמל</div><div class="value" style="font-size:15px">₪5200</div></div>
+      </div>
+      <div style="display:flex;gap:6px;margin-bottom:0.5rem">
+        <button class="btn copy-btn" style="flex:1" onclick="showSettlementSummary(2,&#39;noam&#39;)">נועם</button><button class="btn copy-btn" style="flex:1" onclick="showSettlementSummary(2,&#39;gil&#39;)">גיל</button><button class="btn copy-btn" style="flex:1" onclick="showSettlementSummary(2,&#39;ayal&#39;)">איל</button>
+      </div>
+      <button class="btn btn-danger" style="margin-bottom:0;font-size:12px;padding:8px" onclick="deleteSettlement(2)"><i class="ti ti-trash" aria-hidden="true" style="margin-left:4px"></i>מחק התחשבנות זו</button>
+    </div><div class="card">
       <div style="display:flex;justify-content:space-between;align-items:flex-start">
         <div>
           <div style="font-weight:500;font-size:14px">נסגר ב-20/06/2026</div>
@@ -293,7 +375,7 @@ body { direction: rtl; font-family: var(--font-sans); padding-top: env(safe-area
     <h1>עריכת קריאה</h1>
   </div>
   <div class="section">
-    <div class="alert alert-warn"><i class="ti ti-alert-triangle" aria-hidden="true" style="margin-left:4px"></i>עריכה תחשב מחדש את החשבונות לתקופה זו</div>
+    <div class="alert alert-warn"><i class="ti ti-alert-triangle" aria-hidden="true" style="margin-left:4px"></i>עריכה תחשב מחדש את החשבונות לתקופה זו <strong>וגם את הצריכה בקריאה הבאה</strong> (כי הצריכה מחושבת מההפרש בין שתי קריאות עוקבות). אם רק תיקנת טעות הקלדה — זה תקין ונדרש.</div>
     <div class="card">
       <div class="card-title"><i class="ti ti-calendar" aria-hidden="true"></i> תאריך</div>
       <div class="field"><label>📅 תאריך קריאה</label><input type="date" id="edit-date"></div>
@@ -331,7 +413,22 @@ body { direction: rtl; font-family: var(--font-sans); padding-top: env(safe-area
   </div>
   <div class="section">
     <div class="alert alert-info">בחר תקופה לצפייה ושליחה לשוכרים</div>
-    <div id="reports-list"><div class="period-item" style="cursor:pointer" onclick="showPeriodDetail(4)">
+    <div id="reports-list"><div class="period-item" style="cursor:pointer" onclick="showPeriodDetail(9)">
+      <div class="period-date">29/06/2026</div>
+      <div class="period-meta">2 ימים ❙ נועם: ₪300 ❙ גיל: ₪620 ❙ איל: ₪214</div>
+    </div><div class="period-item" style="cursor:pointer" onclick="showPeriodDetail(8)">
+      <div class="period-date">27/06/2026</div>
+      <div class="period-meta">2 ימים ❙ נועם: ₪620 ❙ גיל: ₪44 ❙ איל: ₪150</div>
+    </div><div class="period-item" style="cursor:pointer" onclick="showPeriodDetail(7)">
+      <div class="period-date">25/06/2026</div>
+      <div class="period-meta">3 ימים ❙ נועם: ₪557 ❙ גיל: ₪1005 ❙ איל: ₪214</div>
+    </div><div class="period-item" style="cursor:pointer" onclick="showPeriodDetail(6)">
+      <div class="period-date">22/06/2026</div>
+      <div class="period-meta">2 ימים ❙ נועם: ₪428 ❙ גיל: ₪620 ❙ איל: ₪86</div>
+    </div><div class="period-item" style="cursor:pointer" onclick="showPeriodDetail(5)">
+      <div class="period-date">20/06/2026</div>
+      <div class="period-meta">5 ימים ❙ נועם: ₪493 ❙ גיל: ₪557 ❙ איל: ₪214</div>
+    </div><div class="period-item" style="cursor:pointer" onclick="showPeriodDetail(4)">
       <div class="period-date">15/06/2026</div>
       <div class="period-meta">3 ימים ❙ נועם: ₪557 ❙ גיל: ₪493 ❙ איל: ₪214</div>
     </div><div class="period-item" style="cursor:pointer" onclick="showPeriodDetail(3)">
@@ -357,52 +454,13 @@ body { direction: rtl; font-family: var(--font-sans); padding-top: env(safe-area
     <button class="back-btn" id="period-report-back-btn" onclick="showScreen(&#39;screen-reports&#39;)"><i class="ti ti-arrow-right" aria-hidden="true"></i><span style="font-size:20px;line-height:1">→</span></button>
     <h1>דוח תקופה</h1>
   </div>
-  <div class="section" id="period-report-content"><div class="card"><div class="card-title">פרטי תקופה</div>
-    <div class="recon-row"><span>תאריך קריאה</span><span>15/06/2026</span></div>
-    <div class="recon-row"><span>קריאה קודמת</span><span>12/06/2026</span></div>
-    <div class="recon-row"><span>מספר ימים</span><span>3</span></div>
-    <div class="recon-row"><span>עלות קוט"ש לפני מע"מ</span><span>₪0.5424</span></div>
-    <div class="recon-row"><span>עלות קוט"ש כולל מע"מ</span><span style="font-weight:500">₪0.6400</span></div>
-    <div class="recon-row"><span>עלות קבועה לפני מע"מ</span><span>₪95.00</span></div>
-    <div class="recon-row"><span>עלות קבועה כולל מע"מ</span><span style="font-weight:500">₪112.10</span></div>
-    <div class="recon-row"><span>חשבון חברה</span><span>₪1900.00</span></div>
-  </div><div class="card"><div class="recon-row"><span style="font-weight:500">נועם</span><span style="font-weight:500;font-size:16px">₪556.87</span></div>
-    <div class="sub-row"><span>קריאה קודמת</span><span>15600.00</span></div>
-    <div class="sub-row"><span>קריאה נוכחית</span><span>16400.00</span></div>
-    <div class="sub-row"><span>צריכה</span><span>800.00 קוט"ש</span></div>
-    <div class="sub-row"><span>עלות צריכה</span><span>₪512.03</span></div>
-    <div class="sub-row"><span>עלות קבועה (40%)</span><span>₪44.84</span></div>
-    <hr class="divider"><div class="recon-row"><span style="font-weight:500">גיל</span><span style="font-weight:500;font-size:16px">₪492.86</span></div>
-    <div class="sub-row"><span>קריאה קודמת</span><span>25700.00</span></div>
-    <div class="sub-row"><span>קריאה נוכחית</span><span>26400.00</span></div>
-    <div class="sub-row"><span>צריכה</span><span>700.00 קוט"ש</span></div>
-    <div class="sub-row"><span>עלות צריכה</span><span>₪448.02</span></div>
-    <div class="sub-row"><span>עלות קבועה (40%)</span><span>₪44.84</span></div>
-    <hr class="divider"><div class="recon-row"><span style="font-weight:500">איל</span><span style="font-weight:500;font-size:16px">₪214.43</span></div>
-    <div class="sub-row"><span>קריאה קודמת</span><span>5900.00</span></div>
-    <div class="sub-row"><span>קריאה נוכחית</span><span>6200.00</span></div>
-    <div class="sub-row"><span>צריכה</span><span>300.00 קוט"ש</span></div>
-    <div class="sub-row"><span>עלות צריכה</span><span>₪192.01</span></div>
-    <div class="sub-row"><span>עלות קבועה (20%)</span><span>₪22.42</span></div>
-    <hr class="divider"><div class="recon-row"><span>סה"כ חויב</span><span style="font-weight:500">₪1264.16</span></div>
-    <div class="recon-row"><span>הפרש</span><span class="negative">₪-635.84</span></div>
-  </div>
-  <div style="font-size:13px;font-weight:500;color:var(--color-text-secondary);margin-bottom:0.5rem;padding-right:2px">הודעות לשוכרים</div><div class="btn-row">
-      <button class="btn" onclick="previewMsg(&#39;noam&#39;,4)"><i class="ti ti-eye" aria-hidden="true" style="margin-left:4px"></i>הצג — נועם</button>
-      <button class="btn btn-whatsapp" onclick="sendWhatsApp(&#39;noam&#39;,4)"><i class="ti ti-brand-whatsapp" aria-hidden="true" style="margin-left:4px"></i>שלח — נועם</button>
-    </div><div class="btn-row">
-      <button class="btn" onclick="previewMsg(&#39;gil&#39;,4)"><i class="ti ti-eye" aria-hidden="true" style="margin-left:4px"></i>הצג — גיל</button>
-      <button class="btn btn-whatsapp" onclick="sendWhatsApp(&#39;gil&#39;,4)"><i class="ti ti-brand-whatsapp" aria-hidden="true" style="margin-left:4px"></i>שלח — גיל</button>
-    </div><div class="btn-row">
-      <button class="btn" onclick="previewMsg(&#39;ayal&#39;,4)"><i class="ti ti-eye" aria-hidden="true" style="margin-left:4px"></i>הצג — איל</button>
-      <button class="btn btn-whatsapp" onclick="sendWhatsApp(&#39;ayal&#39;,4)"><i class="ti ti-brand-whatsapp" aria-hidden="true" style="margin-left:4px"></i>שלח — איל</button>
-    </div></div>
+  <div class="section" id="period-report-content"></div>
 </div>
 
 <div id="screen-msg-preview" class="screen">
   <div class="topbar">
     <button class="back-btn" id="msg-back-btn" onclick="showScreen(&#39;screen-period-report&#39;)"><i class="ti ti-arrow-right" aria-hidden="true"></i><span style="font-size:20px;line-height:1">→</span></button>
-    <h1 id="msg-preview-title">הודעה לנועם</h1>
+    <h1 id="msg-preview-title">תצוגת הודעה</h1>
   </div>
   <div class="section">
     <div class="msg-preview-header">
@@ -410,25 +468,69 @@ body { direction: rtl; font-family: var(--font-sans); padding-top: env(safe-area
       <span>זו ההודעה שתישלח לשוכר</span>
       <button class="btn copy-btn" onclick="copyMsg()" style="margin-right:auto"><i class="ti ti-copy" aria-hidden="true" style="margin-left:4px"></i>העתק</button>
     </div>
-    <div class="msg-preview" id="msg-preview-text">חשבון חשמל — נועם
-📅 תקופה: 12/06/2026 עד 15/06/2026 (3 ימים)
-
-📟 קריאת מונה קודמת: 15600.00
-📟 קריאת מונה נוכחית: 16400.00
-📊 צריכה: 800.00 קוט"ש
-💰 מחיר קוט"ש כולל מע"מ: ₪0.6400
-   עלות צריכה: ₪512.03
-🏢 עלות קבועה כולל מע"מ (40%): ₪44.84
-
-━━━━━━━━━━━━━━━━
-💳 סה"כ לתשלום: ₪556.87
-━━━━━━━━━━━━━━━━</div>
-    <button class="btn btn-whatsapp" id="msg-whatsapp-btn"><i class="ti ti-brand-whatsapp" aria-hidden="true" style="margin-left:6px"></i>שלח לנועם בוואטסאפ</button>
+    <div class="msg-preview" id="msg-preview-text"></div>
+    <button class="btn btn-whatsapp" id="msg-whatsapp-btn"><i class="ti ti-brand-whatsapp" aria-hidden="true" style="margin-left:6px"></i>שלח בוואטסאפ</button>
     <button class="btn btn-cancel" id="msg-back-btn2" onclick="showScreen(&#39;screen-period-report&#39;)">← חזרה</button>
   </div>
 </div>
 
-<div id="screen-settings" class="screen active">
+<div id="screen-guide" class="screen">
+  <div class="topbar">
+    <button class="back-btn" onclick="showScreen(&#39;screen-home&#39;)"><i class="ti ti-arrow-right" aria-hidden="true"></i><span style="font-size:20px;line-height:1">→</span></button>
+    <h1>מדריך שימוש</h1>
+  </div>
+  <div class="section">
+    <div class="alert alert-info">הוראות פשוטות — מה לעשות בכל פעם שלוקחים קריאת מונים מהדיירים</div>
+
+    <div class="card">
+      <div class="card-title"><i class="ti ti-info-circle" aria-hidden="true"></i> לפני שמתחילים</div>
+      <p style="font-size:14px;color:var(--color-text-secondary);line-height:1.7">פותחים את האפליקציה מהאייקון על מסך הבית של הטלפון (האייקון עם הברק הכתום). יש לוודא שיש חיבור לאינטרנט.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span style="font-size:16px">1️⃣</span> פותחים קריאה חדשה</div>
+      <p style="font-size:14px;color:var(--color-text-secondary);line-height:1.7">במסך הראשי לוחצים על הכפתור "קריאה חדשה" (בטאב "סקירה").</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span style="font-size:16px">2️⃣</span> מזינים תאריך ומספרי מונה</div>
+      <p style="font-size:14px;color:var(--color-text-secondary);line-height:1.7">מזינים את התאריך של היום (או התאריך שבו בפועל נקראו המונים), ואת המספרים שנקראו מכל אחד משלושת המונים הפרטיים (נועם, גיל, איל). לאחר מכן לוחצים "המשך".</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span style="font-size:16px">3️⃣</span> מזינים נתוני חשבון מחברת חשמל</div>
+      <p style="font-size:14px;color:var(--color-text-secondary);line-height:1.7">מזינים כמה היה הסכום הכולל ששולם לחברת חשמל באותו חשבון, ואת העלות הקבועה (לפני מע"מ) שמופיעה בחשבון. מחיר הקוט"ש בדרך כלל כבר ממולא אוטומטית — צריך רק לבדוק שהוא נכון, ולתקן אם השתנה.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span style="font-size:16px">4️⃣</span> בודקים שהכל נכון ושומרים</div>
+      <p style="font-size:14px;color:var(--color-text-secondary);line-height:1.7">בשלב הסיכום רואים את כל החישוב לפני השמירה. חשוב לבדוק שהמספרים נראים הגיוניים, ואז ללחוץ "שמור קריאה".</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span style="font-size:16px">5️⃣</span> שולחים דוח לכל דייר</div>
+      <p style="font-size:14px;color:var(--color-text-secondary);line-height:1.7">עוברים לטאב "דוחות", בוחרים את הקריאה העליונה ביותר ברשימה (החדשה ביותר). גוללים למטה ורואים את הדוח של כל דייר. לוחצים על כפתור הוואטסאפ הירוק ליד כל דייר ושולחים לו את הדוח שלו בנפרד.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span style="font-size:16px">6️⃣</span> שולחים גיבוי</div>
+      <p style="font-size:14px;color:var(--color-text-secondary);line-height:1.7">חוזרים פעמיים אחורה (בחץ למעלה) עד למסך הראשי. לוחצים על סמל ההגדרות (⚙) למעלה מימין. לוחצים על "שלח קובץ גיבוי בוואטסאפ" ושולחים את הקובץ לדני, כדי שיהיה גיבוי ואפשר יהיה לבדוק שהכל תקין.</p>
+    </div>
+
+    <div class="card" style="border-color:var(--accent-rust)">
+      <div class="card-title"><i class="ti ti-alert-triangle" aria-hidden="true" style="color:var(--accent-rust)"></i> שתי הערות חשובות</div>
+      <p style="font-size:14px;color:var(--color-text-secondary);line-height:1.7;margin-bottom:0.5rem">• כל דייר מקבל רק את הדוח שלו — שום דייר לא רואה את הסכומים של דייר אחר.</p>
+      <p style="font-size:14px;color:var(--color-text-secondary);line-height:1.7">• אם משהו נראה לא נכון, אפשר תמיד לחזור ל"היסטוריה" ולערוך קריאה קודמת — אבל עדיף לפנות קודם לדני אם יש ספק.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><i class="ti ti-scale" aria-hidden="true"></i> מה זה "התחשבנות"? (לא בכל פעם)</div>
+      <p style="font-size:14px;color:var(--color-text-secondary);line-height:1.7">מדי כמה חודשים, דני יבקש ממך לסגור "התחשבנות" — זה צעד נפרד שדני יסביר בזמנו, ולא חלק מהשגרה הרגילה של קריאת מונים.</p>
+    </div>
+  </div>
+</div>
+
+<div id="screen-settings" class="screen">
   <div class="topbar">
     <button class="back-btn" onclick="showScreen(&#39;screen-home&#39;)"><i class="ti ti-arrow-right" aria-hidden="true"></i><span style="font-size:20px;line-height:1">→</span></button>
     <h1>הגדרות</h1>
