@@ -6,21 +6,30 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="חשמל מיה כהן">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <title>ניהול חשמל — מיה כהן</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.47.0/iconfont/tabler-icons.min.css">
 <style>
 :root {
-  --color-text-primary: #1a1a1a;
-  --color-text-secondary: #6b6b6b;
-  --color-text-tertiary: #9b9b9b;
-  --color-background-primary: #ffffff;
-  --color-background-secondary: #f5f5f5;
-  --color-border-primary: #1a1a1a;
-  --color-border-secondary: #d9d9d9;
-  --color-border-tertiary: #e8e8e8;
-  --border-radius-md: 8px;
-  --border-radius-lg: 14px;
+  --color-text-primary: #241F1A;
+  --color-text-secondary: #7A6F63;
+  --color-text-tertiary: #A89E92;
+  --color-background-primary: #FFFDF9;
+  --color-background-secondary: #F4EEE3;
+  --color-border-primary: #241F1A;
+  --color-border-secondary: #E0D5C3;
+  --color-border-tertiary: #ECE3D2;
+  --border-radius-md: 10px;
+  --border-radius-lg: 18px;
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --accent-amber: #D98E2B;
+  --accent-amber-deep: #B5701A;
+  --accent-charcoal: #211D1A;
+  --accent-teal: #1E7A63;
+  --accent-teal-bg: #E3F2EC;
+  --accent-rust: #B3461F;
+  --accent-rust-bg: #FBEAE2;
+  --gradient-header: linear-gradient(135deg, #241F1A 0%, #3A2E1F 55%, #5A3D1A 100%);
 }
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 html, body { height: 100%; background: var(--color-background-secondary); }
@@ -28,34 +37,34 @@ body { direction: rtl; font-family: var(--font-sans); padding-top: env(safe-area
 .app { max-width: 480px; margin: 0 auto; padding: 0 0 4rem; min-height: 100vh; background: var(--color-background-secondary); }
 .screen { display: none; }
 .screen.active { display: block; }
-.topbar { display: flex; align-items: center; gap: 10px; padding: 1rem 1rem 0.5rem; border-bottom: 0.5px solid var(--color-border-tertiary); margin-bottom: 1rem; background: var(--color-background-secondary); position: sticky; top: 0; z-index: 5; }
-.topbar h1 { font-size: 16px; font-weight: 500; color: var(--color-text-primary); flex: 1; }
-.back-btn { background: none; border: none; cursor: pointer; font-size: 22px; color: var(--color-text-secondary); padding: 4px; }
-.nav { display: flex; border-bottom: 0.5px solid var(--color-border-tertiary); margin-bottom: 1.5rem; padding: 0 1rem; }
-.nav button { flex: 1; padding: 10px 4px; font-size: 13px; background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; color: var(--color-text-secondary); font-family: var(--font-sans); transition: all 0.15s; }
-.nav button.active { color: var(--color-text-primary); border-bottom-color: var(--color-text-primary); font-weight: 500; }
+.topbar { display: flex; align-items: center; gap: 10px; padding: 1.1rem 1.1rem 1rem; margin-bottom: 1rem; background: var(--gradient-header); position: sticky; top: 0; z-index: 5; border-radius: 0 0 20px 20px; box-shadow: 0 4px 16px rgba(33,29,26,0.18); }
+.topbar h1 { font-size: 16px; font-weight: 600; color: #FFFDF9; flex: 1; letter-spacing: 0.01em; }
+.back-btn { background: rgba(255,255,255,0.12); border: none; cursor: pointer; font-size: 20px; color: #FFFDF9; padding: 6px 10px; border-radius: 10px; display: flex; align-items: center; }
+.nav { display: flex; gap: 4px; margin-bottom: 1.25rem; padding: 0 1rem; }
+.nav button { flex: 1; padding: 9px 4px; font-size: 13px; background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: 10px; cursor: pointer; color: var(--color-text-secondary); font-family: var(--font-sans); transition: all 0.15s; font-weight: 500; }
+.nav button.active { color: #FFFDF9; background: var(--accent-amber-deep); border-color: var(--accent-amber-deep); font-weight: 600; box-shadow: 0 2px 8px rgba(181,112,26,0.35); }
 .section { padding: 0 1rem 1rem; }
-.card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; margin-bottom: 1rem; }
+.card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1.1rem 1.25rem; margin-bottom: 1rem; box-shadow: 0 1px 3px rgba(36,31,26,0.04); }
 .card-title { font-size: 14px; font-weight: 500; color: var(--color-text-secondary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 6px; }
 .field { margin-bottom: 0.875rem; }
 .field label { display: block; font-size: 13px; color: var(--color-text-secondary); margin-bottom: 4px; }
 .field input { width: 100%; padding: 10px 10px; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); font-size: 16px; background: var(--color-background-secondary); color: var(--color-text-primary); font-family: var(--font-sans); }
 .field input:focus { outline: none; border-color: var(--color-border-primary); }
 .field .hint { font-size: 12px; color: var(--color-text-tertiary); margin-top: 3px; }
-.vat-result { font-size: 12px; color: #185FA5; background: #E6F1FB; border: 0.5px solid #B5D4F4; border-radius: var(--border-radius-md); padding: 5px 10px; margin-top: 5px; }
+.vat-result { font-size: 12px; color: var(--accent-teal); background: var(--accent-teal-bg); border: 0.5px solid #BFE0D4; border-radius: var(--border-radius-md); padding: 6px 10px; margin-top: 5px; font-weight: 500; }
 .prev-reading { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 6px 10px; font-size: 12px; color: var(--color-text-secondary); margin-bottom: 8px; display: flex; justify-content: space-between; }
 .prev-reading strong { color: var(--color-text-secondary); }
 .btn { display: block; width: 100%; padding: 12px; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); background: var(--color-background-primary); color: var(--color-text-primary); font-size: 15px; font-family: var(--font-sans); cursor: pointer; text-align: center; margin-bottom: 0.75rem; }
 .btn:active { transform: scale(0.98); }
-.btn-primary { background: var(--color-text-primary); color: var(--color-background-primary); border-color: var(--color-text-primary); font-weight: 500; }
-.btn-success { background: #1D9E75; color: #fff; border-color: #1D9E75; font-weight: 500; }
+.btn-primary { background: linear-gradient(135deg, var(--accent-amber) 0%, var(--accent-amber-deep) 100%); color: #FFFDF9; border-color: var(--accent-amber-deep); font-weight: 600; box-shadow: 0 3px 10px rgba(181,112,26,0.3); }
+.btn-success { background: var(--accent-teal); color: #fff; border-color: var(--accent-teal); font-weight: 600; box-shadow: 0 3px 10px rgba(30,122,99,0.25); }
 .btn-whatsapp { background: #25D366; color: #fff; border-color: #25D366; font-weight: 500; }
 .btn-cancel { color: var(--color-text-secondary); border-color: var(--color-border-tertiary); }
 .btn-danger { color: #A32D2D; border-color: #F7C1C1; }
 .btn-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 0.75rem; }
 .btn-row .btn { margin-bottom: 0; font-size: 13px; padding: 9px 6px; }
 .metric-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; margin-bottom: 1rem; }
-.metric { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 0.75rem 1rem; }
+.metric { background: linear-gradient(160deg, #FBF7EF 0%, var(--color-background-secondary) 100%); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 0.8rem 1rem; }
 .metric .label { font-size: 12px; color: var(--color-text-secondary); margin-bottom: 4px; }
 .metric .value { font-size: 20px; font-weight: 500; color: var(--color-text-primary); }
 .metric .sub { font-size: 12px; color: var(--color-text-tertiary); margin-top: 2px; }
@@ -65,8 +74,8 @@ body { direction: rtl; font-family: var(--font-sans); padding-top: env(safe-area
 .apt-detail { font-size: 13px; color: var(--color-text-secondary); margin-top: 2px; }
 .apt-amount { font-size: 17px; font-weight: 500; color: var(--color-text-primary); text-align: left; }
 .badge { display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: 11px; font-weight: 500; }
-.badge-green { background: #EAF3DE; color: #3B6D11; }
-.badge-amber { background: #FAEEDA; color: #854F0B; }
+.badge-green { background: var(--accent-teal-bg); color: var(--accent-teal); }
+.badge-amber { background: #FCEFD9; color: var(--accent-amber-deep); }
 .divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 0.75rem 0; }
 .sub-row { display: flex; justify-content: space-between; padding: 4px 0 4px 8px; font-size: 12px; color: var(--color-text-secondary); }
 .period-item { padding: 10px 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
@@ -75,12 +84,12 @@ body { direction: rtl; font-family: var(--font-sans); padding-top: env(safe-area
 .period-meta { font-size: 12px; color: var(--color-text-secondary); margin-top: 2px; }
 .empty { text-align: center; padding: 2rem 1rem; color: var(--color-text-secondary); font-size: 14px; }
 .alert { padding: 10px 12px; border-radius: var(--border-radius-md); font-size: 13px; margin-bottom: 0.75rem; }
-.alert-info { background: #E6F1FB; color: #185FA5; border: 0.5px solid #B5D4F4; }
-.alert-warn { background: #FAEEDA; color: #854F0B; border: 0.5px solid #FAC775; }
+.alert-info { background: var(--accent-teal-bg); color: var(--accent-teal); border: 0.5px solid #BFE0D4; }
+.alert-warn { background: #FCEFD9; color: var(--accent-amber-deep); border: 0.5px solid #F0CC8F; }
 .recon-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 0.5px solid var(--color-border-tertiary); font-size: 14px; }
 .recon-row:last-child { border-bottom: none; }
-.positive { color: #3B6D11; font-weight: 500; }
-.negative { color: #A32D2D; font-weight: 500; }
+.positive { color: var(--accent-teal); font-weight: 600; }
+.negative { color: var(--accent-rust); font-weight: 600; }
 .step-indicator { display: flex; gap: 6px; justify-content: center; margin-bottom: 1rem; }
 .step-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--color-border-secondary); }
 .step-dot.active { background: var(--color-text-primary); }
@@ -97,7 +106,7 @@ body { direction: rtl; font-family: var(--font-sans); padding-top: env(safe-area
 
 <div id="screen-home" class="screen active">
   <div class="topbar">
-    <i class="ti ti-bolt" aria-hidden="true" style="font-size:20px;color:#1D9E75"></i>
+    <i class="ti ti-bolt" aria-hidden="true" style="font-size:20px;color:var(--accent-amber)"></i>
     <h1>ניהול חשמל — מיה כהן</h1>
     <button class="back-btn" onclick="showScreen('screen-settings')" title="הגדרות"><i class="ti ti-settings" aria-hidden="true"></i></button>
   </div>
@@ -117,7 +126,7 @@ body { direction: rtl; font-family: var(--font-sans); padding-top: env(safe-area
 
 <div id="screen-new-reading" class="screen">
   <div class="topbar">
-    <button class="back-btn" onclick="cancelNewReading()"><i class="ti ti-arrow-right" aria-hidden="true"></i></button>
+    <button class="back-btn" onclick="cancelNewReading()"><i class="ti ti-arrow-right" aria-hidden="true"></i><span style="font-size:20px;line-height:1">&#8594;</span></button>
     <h1>קריאה חדשה</h1>
   </div>
   <div class="section">
@@ -170,7 +179,7 @@ body { direction: rtl; font-family: var(--font-sans); padding-top: env(safe-area
 
 <div id="screen-edit-reading" class="screen">
   <div class="topbar">
-    <button class="back-btn" onclick="showScreen('screen-home')"><i class="ti ti-arrow-right" aria-hidden="true"></i></button>
+    <button class="back-btn" onclick="showScreen('screen-home')"><i class="ti ti-arrow-right" aria-hidden="true"></i><span style="font-size:20px;line-height:1">&#8594;</span></button>
     <h1>עריכת קריאה</h1>
   </div>
   <div class="section">
@@ -207,7 +216,7 @@ body { direction: rtl; font-family: var(--font-sans); padding-top: env(safe-area
 
 <div id="screen-reports" class="screen">
   <div class="topbar">
-    <button class="back-btn" onclick="showScreen('screen-home')"><i class="ti ti-arrow-right" aria-hidden="true"></i></button>
+    <button class="back-btn" onclick="showScreen('screen-home')"><i class="ti ti-arrow-right" aria-hidden="true"></i><span style="font-size:20px;line-height:1">&#8594;</span></button>
     <h1>דוחות</h1>
   </div>
   <div class="section">
@@ -221,7 +230,7 @@ body { direction: rtl; font-family: var(--font-sans); padding-top: env(safe-area
 
 <div id="screen-period-report" class="screen">
   <div class="topbar">
-    <button class="back-btn" onclick="showScreen('screen-reports')"><i class="ti ti-arrow-right" aria-hidden="true"></i></button>
+    <button class="back-btn" id="period-report-back-btn" onclick="showScreen('screen-reports')"><i class="ti ti-arrow-right" aria-hidden="true"></i><span style="font-size:20px;line-height:1">&#8594;</span></button>
     <h1>דוח תקופה</h1>
   </div>
   <div class="section" id="period-report-content"></div>
@@ -229,7 +238,7 @@ body { direction: rtl; font-family: var(--font-sans); padding-top: env(safe-area
 
 <div id="screen-msg-preview" class="screen">
   <div class="topbar">
-    <button class="back-btn" id="msg-back-btn" onclick="showScreen('screen-period-report')"><i class="ti ti-arrow-right" aria-hidden="true"></i></button>
+    <button class="back-btn" id="msg-back-btn" onclick="showScreen('screen-period-report')"><i class="ti ti-arrow-right" aria-hidden="true"></i><span style="font-size:20px;line-height:1">&#8594;</span></button>
     <h1 id="msg-preview-title">תצוגת הודעה</h1>
   </div>
   <div class="section">
@@ -246,7 +255,7 @@ body { direction: rtl; font-family: var(--font-sans); padding-top: env(safe-area
 
 <div id="screen-settings" class="screen">
   <div class="topbar">
-    <button class="back-btn" onclick="showScreen('screen-home')"><i class="ti ti-arrow-right" aria-hidden="true"></i></button>
+    <button class="back-btn" onclick="showScreen('screen-home')"><i class="ti ti-arrow-right" aria-hidden="true"></i><span style="font-size:20px;line-height:1">&#8594;</span></button>
     <h1>הגדרות</h1>
   </div>
   <div class="section">
@@ -445,6 +454,14 @@ function deleteReading() {
 }
 
 function showScreen(id) {
+  if(id === 'screen-home-history') {
+    document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+    document.getElementById('screen-home').classList.add('active');
+    window.scrollTo(0,0);
+    const historyBtn = document.querySelector('.nav button:nth-child(2)');
+    if(historyBtn) switchTab(historyBtn, 'tab-history');
+    return;
+  }
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   window.scrollTo(0,0);
@@ -588,10 +605,14 @@ function renderHistory() {
         <div><div style="font-weight:500;font-size:15px">${formatDate(r.date)}</div>
         <div style="font-size:12px;color:var(--color-text-secondary);margin-top:2px">${r.days} ימים ❙ ₪${(r.kwhPriceBefore||0).toFixed(4)} לפני מע"מ</div></div>
         <span class="badge ${diff>=0?'badge-amber':'badge-green'}">${diff>=0?'הפרש +':'הפרש '}₪${Math.abs(diff).toFixed(0)}</span></div>
+        <div class="metric-grid" style="margin-top:0.5rem;margin-bottom:0.5rem">
+          <div class="metric"><div class="label">נגבה מהדיירים</div><div class="value" style="font-size:16px">₪${total.toFixed(0)}</div></div>
+          <div class="metric"><div class="label">שולם לחברה</div><div class="value" style="font-size:16px">₪${r.companyTotal.toFixed(0)}</div></div>
+        </div>
         <hr class="divider">
         <div style="display:flex;gap:8px;font-size:13px">${APTS.map(a=>`<span style="flex:1;text-align:center"><span style="color:var(--color-text-secondary)">${a.name}</span><br><b>₪${r.bills[a.id].toFixed(0)}</b></span>`).join('')}</div>
         <div class="history-actions">
-          <button class="btn" onclick="showPeriodDetail(${idx})"><i class="ti ti-file-text" aria-hidden="true" style="margin-left:4px"></i>דוח</button>
+          <button class="btn" onclick="showPeriodDetail(${idx}, 'screen-home-history')"><i class="ti ti-file-text" aria-hidden="true" style="margin-left:4px"></i>דוח</button>
           <button class="btn" onclick="openEdit(${idx})"><i class="ti ti-edit" aria-hidden="true" style="margin-left:4px"></i>ערוך / מחק</button>
         </div></div>`;
     }
@@ -599,7 +620,9 @@ function renderHistory() {
   document.getElementById('history-content').innerHTML=html;
 }
 
-function showPeriodDetail(idx) {
+function showPeriodDetail(idx, fromScreen) {
+  const backTarget = fromScreen || 'screen-reports';
+  document.getElementById('period-report-back-btn').onclick = () => showScreen(backTarget);
   const r=state.readings[idx];
   const prev=idx>0?state.readings[idx-1]:null;
   const total=Object.values(r.bills).reduce((a,b)=>a+b,0);
@@ -687,8 +710,15 @@ function buildTenantMsg(aptId, readingIdx) {
 function renderRecon() {
   const readings=state.readings.filter(r=>!r.isBaseline);
   if(readings.length<2){document.getElementById('recon-content').innerHTML='<div class="empty">נדרשות לפחות שתי קריאות לחישוב התחשבנות שנתית</div>';return;}
-  let totalCompany=0,totalBilled={noam:0,gil:0,ayal:0};
-  readings.forEach(r=>{totalCompany+=r.companyTotal;APTS.forEach(a=>totalBilled[a.id]+=r.bills[a.id]);});
+  let totalCompany=0,totalBilled={noam:0,gil:0,ayal:0},totalConsumptionCost={noam:0,gil:0,ayal:0},totalFixedShare={noam:0,gil:0,ayal:0};
+  readings.forEach(r=>{
+    totalCompany+=r.companyTotal;
+    APTS.forEach(a=>{
+      totalBilled[a.id]+=r.bills[a.id];
+      totalConsumptionCost[a.id]+=r.consumption[a.id]*(r.kwhPrice||0);
+      totalFixedShare[a.id]+=(r.fixedCost||0)*a.share;
+    });
+  });
   const totalBilledSum=Object.values(totalBilled).reduce((a,b)=>a+b,0);
   const totalDiff=totalBilledSum-totalCompany;
   let html=`<div class="alert alert-info">השוואה בין מה ששולם לחברת החשמל למה שנגבה מהדיירים</div>
@@ -697,11 +727,21 @@ function renderRecon() {
     <div class="metric"><div class="label">נגבה מדיירים</div><div class="value">₪${totalBilledSum.toFixed(0)}</div></div>
   </div><div class="card"><div class="card-title">התחשבנות לפי דירה</div>`;
   APTS.forEach(a=>{
-    const owedOrRefund=totalBilled[a.id]-totalCompany*a.share;
-    html+=`<div class="apt-row"><div><div class="apt-name">${a.name}</div><div class="apt-detail">שולם ₪${totalBilled[a.id].toFixed(2)}</div></div>
-      <div style="text-align:left"><div class="${owedOrRefund>0?'positive':'negative'}" style="font-size:14px;font-weight:500">${owedOrRefund>0?'שולם יותר':'להחזר'} ₪${Math.abs(owedOrRefund).toFixed(2)}</div></div></div>`;
+    html+=`<div class="apt-row"><div><div class="apt-name">${a.name}</div><div class="apt-detail">צריכה ₪${totalConsumptionCost[a.id].toFixed(2)} + קבוע ₪${totalFixedShare[a.id].toFixed(2)} = ₪${totalBilled[a.id].toFixed(2)}</div></div></div>`;
   });
-  html+=`<hr class="divider"><div class="recon-row"><span style="font-weight:500">הפרש כולל</span><span class="${totalDiff>=0?'positive':'negative'}" style="font-weight:500">${totalDiff>=0?'+':''}₪${totalDiff.toFixed(2)}</span></div></div>`;
+  html+=`<hr class="divider"><div class="recon-row"><span style="font-weight:500">הפרש כולל (נגבה פחות שולם לחברה)</span><span class="${totalDiff>=0?'positive':'negative'}" style="font-weight:500">${totalDiff>=0?'+':''}₪${totalDiff.toFixed(2)}</span></div></div>`;
+  if(Math.abs(totalDiff) > 0.01) {
+    html+=`<div class="card"><div class="card-title"><i class="ti ti-scale" aria-hidden="true"></i> חלוקת ההפרש לפי יחס הצריכה</div>
+    <div class="hint" style="margin-bottom:0.75rem">ההפרש הכולל מחולק בין הדירות לפי יחס הצריכה שלהן בפועל, כך שכל דירה נושאת בחלק יחסי והוגן.</div>`;
+    const totalConsumptionAll = Object.values(totalConsumptionCost).reduce((a,b)=>a+b,0) || 1;
+    APTS.forEach(a=>{
+      const proportion = totalConsumptionCost[a.id] / totalConsumptionAll;
+      const aptShareOfDiff = totalDiff * proportion;
+      html+=`<div class="apt-row"><div><div class="apt-name">${a.name}</div><div class="apt-detail">${(proportion*100).toFixed(1)}% מהצריכה הכוללת</div></div>
+      <div style="text-align:left"><div class="${aptShareOfDiff>=0?'negative':'positive'}" style="font-size:14px;font-weight:500">${aptShareOfDiff>=0?'לתשלום נוסף':'להחזר'} ₪${Math.abs(aptShareOfDiff).toFixed(2)}</div></div></div>`;
+    });
+    html+=`</div>`;
+  }
   html+=`<button class="btn btn-whatsapp" onclick="sendOwnerReconReport()"><i class="ti ti-brand-whatsapp" aria-hidden="true" style="margin-left:6px"></i>שלח דוח התחשבנות לבעל הבית</button>`;
   document.getElementById('recon-content').innerHTML=html;
 }
@@ -773,16 +813,32 @@ function sendFullOwnerReport() {
 
 function sendOwnerReconReport() {
   const readings=state.readings.filter(r=>!r.isBaseline);
-  let totalCompany=0;const totalBilled={noam:0,gil:0,ayal:0};
-  readings.forEach(r=>{totalCompany+=r.companyTotal;APTS.forEach(a=>totalBilled[a.id]+=r.bills[a.id]);});
+  let totalCompany=0;const totalBilled={noam:0,gil:0,ayal:0};const totalConsumptionCost={noam:0,gil:0,ayal:0};
+  readings.forEach(r=>{
+    totalCompany+=r.companyTotal;
+    APTS.forEach(a=>{
+      totalBilled[a.id]+=r.bills[a.id];
+      totalConsumptionCost[a.id]+=r.consumption[a.id]*(r.kwhPrice||0);
+    });
+  });
+  const totalBilledSum = Object.values(totalBilled).reduce((a,b)=>a+b,0);
+  const totalDiff = totalBilledSum - totalCompany;
   const lines=['דוח התחשבנות שנתית — חשמל מיה כהן',''];
   lines.push(`💡 סה"כ שולם לחברת החשמל: ₪${totalCompany.toFixed(2)}`);
-  lines.push(`💳 סה"כ נגבה מדיירים: ₪${Object.values(totalBilled).reduce((a,b)=>a+b,0).toFixed(2)}`);
+  lines.push(`💳 סה"כ נגבה מדיירים: ₪${totalBilledSum.toFixed(2)}`);
+  lines.push(`📊 הפרש כולל: ${totalDiff>=0?'+':''}₪${totalDiff.toFixed(2)}`);
   lines.push('');
-  APTS.forEach(a=>{
-    const owedOrRefund=totalBilled[a.id]-totalCompany*a.share;
-    lines.push(`${a.name}: ${owedOrRefund>0?'שולם יותר ב':'חוב של '}₪${Math.abs(owedOrRefund).toFixed(2)}`);
-  });
+  if(Math.abs(totalDiff) > 0.01) {
+    lines.push('חלוקת ההפרש לפי יחס צריכה:');
+    const totalConsumptionAll = Object.values(totalConsumptionCost).reduce((a,b)=>a+b,0) || 1;
+    APTS.forEach(a=>{
+      const proportion = totalConsumptionCost[a.id] / totalConsumptionAll;
+      const aptShareOfDiff = totalDiff * proportion;
+      lines.push(`${a.name} (${(proportion*100).toFixed(1)}% מהצריכה): ${aptShareOfDiff>=0?'לתשלום נוסף':'להחזר'} ₪${Math.abs(aptShareOfDiff).toFixed(2)}`);
+    });
+  } else {
+    lines.push('אין הפרש משמעותי השנה — הכל מאוזן.');
+  }
   const phone=state.ownerPhone;
   const msg=lines.join('\n');
   window.open(phone?`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`:`https://wa.me/?text=${encodeURIComponent(msg)}`,'_blank');
