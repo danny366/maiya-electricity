@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0061)file:///C:/Users/dron/Downloads/nihul-hashmal-maya-cohen.html -->
+<!-- saved from url=(0063)file:///C:/Users/dron/Downloads/nihul-hashmal-maya-cohen_1.html -->
 <html lang="he" dir="rtl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
@@ -8,7 +8,7 @@
 <meta name="apple-mobile-web-app-title" content="חשמל מיה כהן">
 <link rel="apple-touch-icon" href="file:///C:/Users/dron/Downloads/apple-touch-icon.png">
 <title>ניהול חשמל — מיה כהן</title>
-<link rel="stylesheet" href="./ניהול חשמל — מיה כהן_files/tabler-icons.min.css">
+<link rel="stylesheet" href="./index_files/tabler-icons.min.css">
 <style>
 :root {
   --color-text-primary: #4A3F35;
@@ -111,11 +111,11 @@ body { direction: rtl; font-family: var(--font-sans); padding-top: env(safe-area
     <button class="back-btn" onclick="showScreen(&#39;screen-settings&#39;)" title="הגדרות"><i class="ti ti-settings" aria-hidden="true"></i><span style="font-size:18px;line-height:1">⚙</span></button>
   </div>
   <div class="nav">
-    <button class="active" onclick="switchTab(this,&#39;tab-dashboard&#39;)">סקירה</button>
+    <button class="" onclick="switchTab(this,&#39;tab-dashboard&#39;)">סקירה</button>
     <button onclick="switchTab(this,&#39;tab-history&#39;)">היסטוריה</button>
-    <button onclick="switchTab(this,&#39;tab-recon&#39;)">התחשבנות</button>
+    <button onclick="switchTab(this,&#39;tab-recon&#39;)" class="active">התחשבנות</button>
   </div>
-  <div id="tab-dashboard" class="section">
+  <div id="tab-dashboard" class="section" style="display: none;">
     <div id="dashboard-content"><div class="metric-grid">
     <div class="metric"><div class="label">💳 חשבון אחרון</div><div class="value">₪2108</div><div class="sub">19/06/2026</div></div>
     <div class="metric"><div class="label">🧾 חויב דיירים</div><div class="value">₪2049</div><div class="sub">61 ימים</div></div>
@@ -132,7 +132,7 @@ body { direction: rtl; font-family: var(--font-sans); padding-top: env(safe-area
         <span class="badge badge-green">הפרש ₪60</span></div>
         <div class="metric-grid" style="margin-top:0.5rem;margin-bottom:0.5rem">
           <div class="metric"><div class="label">🧾 נגבה מהדיירים</div><div class="value" style="font-size:16px">₪2049</div></div>
-          <div class="metric"><div class="label">💡 שולם לחברה</div><div class="value" style="font-size:16px">₪2108</div></div>
+          <div class="metric"><div class="label">💡 שולם לחברת חשמל</div><div class="value" style="font-size:16px">₪2108</div></div>
         </div>
         <hr class="divider">
         <div style="display:flex;gap:8px;font-size:13px"><span style="flex:1;text-align:center"><span style="color:var(--color-text-secondary)">נועם</span><br><b>₪1127</b></span><span style="flex:1;text-align:center"><span style="color:var(--color-text-secondary)">גיל</span><br><b>₪613</b></span><span style="flex:1;text-align:center"><span style="color:var(--color-text-secondary)">איל</span><br><b>₪309</b></span></div>
@@ -144,7 +144,23 @@ body { direction: rtl; font-family: var(--font-sans); padding-top: env(safe-area
         <div style="font-size:12px;color:var(--color-text-secondary);margin-top:2px">נועם: 12212.66 ❙ גיל: 23453.61 ❙ איל: 4549.99</div></div>
         <span class="badge badge-green">בסיס</span></div>
         <div class="history-actions"><button class="btn" onclick="openEdit(0)"><i class="ti ti-edit" aria-hidden="true" style="margin-left:4px"></i>ערוך</button></div></div></div></div>
-  <div id="tab-recon" class="section" style="display:none"><div id="recon-content"><div class="empty">נדרשות לפחות שתי קריאות לחישוב התחשבנות שנתית</div></div></div>
+  <div id="tab-recon" class="section" style="display: block;"><div id="recon-content"><div class="alert alert-info">השוואה בין מה ששולם לחברת חשמל למה שנגבה מהדיירים</div><div class="metric-grid">
+    <div class="metric"><div class="label">💡 שולם לחברת חשמל</div><div class="value">₪2108</div></div>
+    <div class="metric"><div class="label">🧾 נגבה מדיירים</div><div class="value">₪2049</div></div>
+  </div><div class="card"><div class="card-title">התחשבנות לפי דירה</div><div class="apt-row"><div><div class="apt-name">נועם</div><div class="apt-detail">צריכה ₪1082.75 + קבוע ₪43.75 = ₪1126.50</div></div></div><div class="apt-row"><div><div class="apt-name">גיל</div><div class="apt-detail">צריכה ₪569.34 + קבוע ₪43.70 = ₪613.04</div></div></div><div class="apt-row"><div><div class="apt-name">איל</div><div class="apt-detail">צריכה ₪287.10 + קבוע ₪21.86 = ₪308.96</div></div></div><hr class="divider"><div class="recon-row"><span style="font-weight:500">הפרש כולל (נגבה פחות שולם לחברת חשמל)</span><span class="negative" style="font-weight:500">₪-59.85</span></div></div><div class="card"><div class="card-title"><i class="ti ti-scale" aria-hidden="true"></i> חלוקת ההפרש לפי יחס הצריכה</div>
+    <div class="hint" style="margin-bottom:0.75rem">ההפרש הכולל מחולק בין הדירות לפי יחס הצריכה שלהן בפועל, כך שכל דירה נושאת בחלק יחסי והוגן.</div><div class="apt-row"><div><div class="apt-name">נועם</div><div class="apt-detail">55.8% מהצריכה הכוללת</div></div>
+      <div style="text-align:left"><div class="positive" style="font-size:14px;font-weight:500">להחזר ₪33.42</div></div></div><div class="apt-row"><div><div class="apt-name">גיל</div><div class="apt-detail">29.4% מהצריכה הכוללת</div></div>
+      <div style="text-align:left"><div class="positive" style="font-size:14px;font-weight:500">להחזר ₪17.57</div></div></div><div class="apt-row"><div><div class="apt-name">איל</div><div class="apt-detail">14.8% מהצריכה הכוללת</div></div>
+      <div style="text-align:left"><div class="positive" style="font-size:14px;font-weight:500">להחזר ₪8.86</div></div></div></div><div class="card-title" style="padding:0 0 0.5rem;margin-top:0.5rem"><i class="ti ti-message" aria-hidden="true"></i> שליחת דוח התחשבנות לשוכרים</div><div class="btn-row">
+        <button class="btn" onclick="previewSettlementMsg(&#39;noam&#39;)"><i class="ti ti-eye" aria-hidden="true" style="margin-left:4px"></i>הצג — נועם</button>
+        <button class="btn btn-whatsapp" onclick="sendSettlementMsg(&#39;noam&#39;)"><i class="ti ti-brand-whatsapp" aria-hidden="true" style="margin-left:4px"></i>שלח — נועם</button>
+      </div><div class="btn-row">
+        <button class="btn" onclick="previewSettlementMsg(&#39;gil&#39;)"><i class="ti ti-eye" aria-hidden="true" style="margin-left:4px"></i>הצג — גיל</button>
+        <button class="btn btn-whatsapp" onclick="sendSettlementMsg(&#39;gil&#39;)"><i class="ti ti-brand-whatsapp" aria-hidden="true" style="margin-left:4px"></i>שלח — גיל</button>
+      </div><div class="btn-row">
+        <button class="btn" onclick="previewSettlementMsg(&#39;ayal&#39;)"><i class="ti ti-eye" aria-hidden="true" style="margin-left:4px"></i>הצג — איל</button>
+        <button class="btn btn-whatsapp" onclick="sendSettlementMsg(&#39;ayal&#39;)"><i class="ti ti-brand-whatsapp" aria-hidden="true" style="margin-left:4px"></i>שלח — איל</button>
+      </div><button class="btn btn-whatsapp" onclick="sendOwnerReconReport()"><i class="ti ti-brand-whatsapp" aria-hidden="true" style="margin-left:6px"></i>שלח דוח התחשבנות לבעל הבית</button><button class="btn btn-success" onclick="openSettleConfirm()"><i class="ti ti-checkbox" aria-hidden="true" style="margin-left:6px"></i>סגור התחשבנות (איפוס לאחר תשלום)</button></div></div>
 </div>
 
 <div id="screen-new-reading" class="screen">
@@ -173,7 +189,7 @@ body { direction: rtl; font-family: var(--font-sans); padding-top: env(safe-area
     <div id="step1" style="display:none">
       <div class="card">
         <div class="card-title"><i class="ti ti-receipt" aria-hidden="true"></i> חשבון חברת החשמל</div>
-        <div class="field"><label>💳 סה"כ חשבון החברה (₪)</label><input type="number" inputmode="decimal" id="company-total" step="0.01" placeholder="סכום כולל מע&quot;מ"></div>
+        <div class="field"><label>💳 סה"כ חשבון חברת חשמל (₪)</label><input type="number" inputmode="decimal" id="company-total" step="0.01" placeholder="סכום כולל מע&quot;מ"></div>
         <div class="field">
           <label>💰 עלות קוט"ש לפני מע"מ (₪)</label>
           <input type="number" inputmode="decimal" id="kwh-price-before" step="0.0001" placeholder="לדוגמה: 0.5424" oninput="updateVatDisplay()">
@@ -219,7 +235,7 @@ body { direction: rtl; font-family: var(--font-sans); padding-top: env(safe-area
     </div>
     <div class="card">
       <div class="card-title"><i class="ti ti-receipt" aria-hidden="true"></i> חשבון חברה</div>
-      <div class="field"><label>💳 סה"כ חשבון החברה (₪)</label><input type="number" inputmode="decimal" id="edit-company-total" step="0.01"></div>
+      <div class="field"><label>💳 סה"כ חשבון חברת חשמל (₪)</label><input type="number" inputmode="decimal" id="edit-company-total" step="0.01"></div>
       <div class="field">
         <label>💰 עלות קוט"ש לפני מע"מ (₪)</label>
         <input type="number" inputmode="decimal" id="edit-kwh-before" step="0.0001" oninput="updateEditVatDisplay()">
@@ -330,7 +346,7 @@ const APTS = [
   { id:'ayal', name:'איל',  rooms:2, share:0.2 }
 ];
 
-let state = { readings: [], ownerPhone: '', vatRate: 18, initDone: false };
+let state = { readings: [], settlements: [], ownerPhone: '', vatRate: 18, initDone: false };
 let currentMsgText = '';
 let editingIdx = -1;
 
@@ -339,6 +355,7 @@ function getVatMult() { return 1 + (state.vatRate / 100); }
 function load() {
   try { const s = localStorage.getItem('elec_app'); if(s) state = JSON.parse(s); } catch(e){}
   if(state.vatRate === undefined) state.vatRate = 18;
+  if(state.settlements === undefined) state.settlements = [];
   if(!state.initDone) initFirstReading();
   recalcAllDays();
   renderAll();
@@ -510,6 +527,14 @@ function showScreen(id) {
     if(historyBtn) switchTab(historyBtn, 'tab-history');
     return;
   }
+  if(id === 'screen-home-recon') {
+    document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+    document.getElementById('screen-home').classList.add('active');
+    window.scrollTo(0,0);
+    const reconBtn = document.querySelector('.nav button:nth-child(3)');
+    if(reconBtn) switchTab(reconBtn, 'tab-recon');
+    return;
+  }
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   window.scrollTo(0,0);
@@ -589,7 +614,7 @@ function renderCalcPreview() {
   });
   html+=`<hr class="divider">`;
   html+=`<div class="recon-row"><span>סה"כ חויב דיירים</span><span style="font-weight:500">₪${totalBilled.toFixed(2)}</span></div>`;
-  html+=`<div class="recon-row"><span>חשבון החברה</span><span>₪${companyTotal.toFixed(2)}</span></div>`;
+  html+=`<div class="recon-row"><span>חשבון חברת חשמל</span><span>₪${companyTotal.toFixed(2)}</span></div>`;
   html+=`<div class="recon-row"><span>הפרש תקופה זו</span><span class="${diff>=0?'positive':'negative'}">${diff>=0?'+':''}₪${diff.toFixed(2)}</span></div>`;
   html+=`</div>`;
   document.getElementById('calc-preview').innerHTML=html;
@@ -655,7 +680,7 @@ function renderHistory() {
         <span class="badge ${diff>=0?'badge-amber':'badge-green'}">${diff>=0?'הפרש +':'הפרש '}₪${Math.abs(diff).toFixed(0)}</span></div>
         <div class="metric-grid" style="margin-top:0.5rem;margin-bottom:0.5rem">
           <div class="metric"><div class="label">🧾 נגבה מהדיירים</div><div class="value" style="font-size:16px">₪${total.toFixed(0)}</div></div>
-          <div class="metric"><div class="label">💡 שולם לחברה</div><div class="value" style="font-size:16px">₪${r.companyTotal.toFixed(0)}</div></div>
+          <div class="metric"><div class="label">💡 שולם לחברת חשמל</div><div class="value" style="font-size:16px">₪${r.companyTotal.toFixed(0)}</div></div>
         </div>
         <hr class="divider">
         <div style="display:flex;gap:8px;font-size:13px">${APTS.map(a=>`<span style="flex:1;text-align:center"><span style="color:var(--color-text-secondary)">${a.name}</span><br><b>₪${r.bills[a.id].toFixed(0)}</b></span>`).join('')}</div>
@@ -755,9 +780,14 @@ function buildTenantMsg(aptId, readingIdx) {
   ].join('\n');
 }
 
-function renderRecon() {
-  const readings=state.readings.filter(r=>!r.isBaseline);
-  if(readings.length<2){document.getElementById('recon-content').innerHTML='<div class="empty">נדרשות לפחות שתי קריאות לחישוב התחשבנות שנתית</div>';return;}
+function getOpenReadings() {
+  const allReadings = state.readings.filter(r=>!r.isBaseline);
+  const lastSettlement = state.settlements.length > 0 ? state.settlements[state.settlements.length-1] : null;
+  if(!lastSettlement) return allReadings;
+  return allReadings.filter(r => new Date(r.date) > new Date(lastSettlement.date));
+}
+
+function computeReconTotals(readings) {
   let totalCompany=0,totalBilled={noam:0,gil:0,ayal:0},totalConsumptionCost={noam:0,gil:0,ayal:0},totalFixedShare={noam:0,gil:0,ayal:0};
   readings.forEach(r=>{
     totalCompany+=r.companyTotal;
@@ -769,15 +799,31 @@ function renderRecon() {
   });
   const totalBilledSum=Object.values(totalBilled).reduce((a,b)=>a+b,0);
   const totalDiff=totalBilledSum-totalCompany;
-  let html=`<div class="alert alert-info">השוואה בין מה ששולם לחברת החשמל למה שנגבה מהדיירים</div>
-  <div class="metric-grid">
-    <div class="metric"><div class="label">💡 שולם לחברה</div><div class="value">₪${totalCompany.toFixed(0)}</div></div>
+  return {totalCompany, totalBilled, totalConsumptionCost, totalFixedShare, totalBilledSum, totalDiff};
+}
+
+function renderRecon() {
+  const readings = getOpenReadings();
+  if(readings.length<1){document.getElementById('recon-content').innerHTML='<div class="empty">נדרשת לפחות קריאה אחת מאז ההתחשבנות האחרונה</div>'+renderSettlementHistory();return;}
+  const {totalCompany, totalBilled, totalConsumptionCost, totalBilledSum, totalDiff} = computeReconTotals(readings);
+
+  const lastSettlement = state.settlements.length > 0 ? state.settlements[state.settlements.length-1] : null;
+  let html = '';
+  if(lastSettlement) {
+    html += `<div class="alert alert-info">מציג נתונים מאז ההתחשבנות האחרונה (${formatDate(lastSettlement.date)})</div>`;
+  } else {
+    html += `<div class="alert alert-info">השוואה בין מה ששולם לחברת חשמל למה שנגבה מהדיירים</div>`;
+  }
+  html+=`<div class="metric-grid">
+    <div class="metric"><div class="label">💡 שולם לחברת חשמל</div><div class="value">₪${totalCompany.toFixed(0)}</div></div>
     <div class="metric"><div class="label">🧾 נגבה מדיירים</div><div class="value">₪${totalBilledSum.toFixed(0)}</div></div>
   </div><div class="card"><div class="card-title">התחשבנות לפי דירה</div>`;
   APTS.forEach(a=>{
-    html+=`<div class="apt-row"><div><div class="apt-name">${a.name}</div><div class="apt-detail">צריכה ₪${totalConsumptionCost[a.id].toFixed(2)} + קבוע ₪${totalFixedShare[a.id].toFixed(2)} = ₪${totalBilled[a.id].toFixed(2)}</div></div></div>`;
+    html+=`<div class="apt-row"><div><div class="apt-name">${a.name}</div><div class="apt-detail">צריכה ₪${totalConsumptionCost[a.id].toFixed(2)} + קבוע ₪${(totalBilled[a.id]-totalConsumptionCost[a.id]).toFixed(2)} = ₪${totalBilled[a.id].toFixed(2)}</div></div></div>`;
   });
-  html+=`<hr class="divider"><div class="recon-row"><span style="font-weight:500">הפרש כולל (נגבה פחות שולם לחברה)</span><span class="${totalDiff>=0?'positive':'negative'}" style="font-weight:500">${totalDiff>=0?'+':''}₪${totalDiff.toFixed(2)}</span></div></div>`;
+  html+=`<hr class="divider"><div class="recon-row"><span style="font-weight:500">הפרש כולל (נגבה פחות שולם לחברת חשמל)</span><span class="${totalDiff>=0?'positive':'negative'}" style="font-weight:500">${totalDiff>=0?'+':''}₪${totalDiff.toFixed(2)}</span></div></div>`;
+
+  let aptShares = {};
   if(Math.abs(totalDiff) > 0.01) {
     html+=`<div class="card"><div class="card-title"><i class="ti ti-scale" aria-hidden="true"></i> חלוקת ההפרש לפי יחס הצריכה</div>
     <div class="hint" style="margin-bottom:0.75rem">ההפרש הכולל מחולק בין הדירות לפי יחס הצריכה שלהן בפועל, כך שכל דירה נושאת בחלק יחסי והוגן.</div>`;
@@ -785,13 +831,96 @@ function renderRecon() {
     APTS.forEach(a=>{
       const proportion = totalConsumptionCost[a.id] / totalConsumptionAll;
       const aptShareOfDiff = totalDiff * proportion;
+      aptShares[a.id] = {proportion, amount: aptShareOfDiff};
       html+=`<div class="apt-row"><div><div class="apt-name">${a.name}</div><div class="apt-detail">${(proportion*100).toFixed(1)}% מהצריכה הכוללת</div></div>
       <div style="text-align:left"><div class="${aptShareOfDiff>=0?'negative':'positive'}" style="font-size:14px;font-weight:500">${aptShareOfDiff>=0?'לתשלום נוסף':'להחזר'} ₪${Math.abs(aptShareOfDiff).toFixed(2)}</div></div></div>`;
     });
     html+=`</div>`;
+    html+=`<div class="card-title" style="padding:0 0 0.5rem;margin-top:0.5rem"><i class="ti ti-message" aria-hidden="true"></i> שליחת דוח התחשבנות לשוכרים</div>`;
+    APTS.forEach(a=>{
+      html+=`<div class="btn-row">
+        <button class="btn" onclick="previewSettlementMsg('${a.id}')"><i class="ti ti-eye" aria-hidden="true" style="margin-left:4px"></i>הצג — ${a.name}</button>
+        <button class="btn btn-whatsapp" onclick="sendSettlementMsg('${a.id}')"><i class="ti ti-brand-whatsapp" aria-hidden="true" style="margin-left:4px"></i>שלח — ${a.name}</button>
+      </div>`;
+    });
+  } else {
+    html += `<div class="alert alert-info">אין הפרש משמעותי כרגע — הכל מאוזן.</div>`;
   }
+
   html+=`<button class="btn btn-whatsapp" onclick="sendOwnerReconReport()"><i class="ti ti-brand-whatsapp" aria-hidden="true" style="margin-left:6px"></i>שלח דוח התחשבנות לבעל הבית</button>`;
+  html+=`<button class="btn btn-success" onclick="openSettleConfirm()"><i class="ti ti-checkbox" aria-hidden="true" style="margin-left:6px"></i>סגור התחשבנות (איפוס לאחר תשלום)</button>`;
+
+  html += renderSettlementHistory();
   document.getElementById('recon-content').innerHTML=html;
+
+  window._currentReconData = {readings, totalCompany, totalBilled, totalConsumptionCost, totalBilledSum, totalDiff, aptShares};
+}
+
+function renderSettlementHistory() {
+  if(state.settlements.length===0) return '';
+  let html = `<hr class="divider"><div class="card-title" style="padding:0.5rem 0"><i class="ti ti-history" aria-hidden="true"></i> היסטוריית התחשבנויות</div>`;
+  [...state.settlements].reverse().forEach((s) => {
+    html += `<div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div style="font-weight:500;font-size:14px">נסגר ב-${formatDate(s.date)}</div>
+        <span class="badge ${s.totalDiff>=0?'badge-amber':'badge-green'}">${s.totalDiff>=0?'+':''}₪${s.totalDiff.toFixed(0)}</span>
+      </div>
+      <div style="font-size:12px;color:var(--color-text-secondary);margin-top:4px">
+        ${APTS.map(a=>`${a.name}: ${s.aptShares[a.id]?(s.aptShares[a.id].amount>=0?'+':'')+'₪'+s.aptShares[a.id].amount.toFixed(0):'—'}`).join(' ❙ ')}
+      </div>
+    </div>`;
+  });
+  return html;
+}
+
+function openSettleConfirm() {
+  const d = window._currentReconData;
+  if(!d) return;
+  if(!confirm(`לסגור את ההתחשבנות הנוכחית? ההפרש (${d.totalDiff>=0?'+':''}₪${d.totalDiff.toFixed(2)}) יישמר בהיסטוריה, וההתחשבנות הבאה תתחיל מאפס מהקריאה הבאה.`)) return;
+  state.settlements.push({
+    date: new Date().toISOString().split('T')[0],
+    totalCompany: d.totalCompany,
+    totalBilledSum: d.totalBilledSum,
+    totalDiff: d.totalDiff,
+    aptShares: d.aptShares
+  });
+  save();
+  renderAll();
+  alert('ההתחשבנות נסגרה. ההתחשבנות הבאה מתחילה מאפס.');
+}
+
+function buildSettlementMsg(aptId) {
+  const d = window._currentReconData;
+  if(!d) return '';
+  const a = APTS.find(x=>x.id===aptId);
+  const share = d.aptShares[aptId] || {proportion:0, amount:0};
+  return [
+    `התחשבנות חשמל — ${a.name}`,
+    ``,
+    `📊 סה"כ הפרש כולל בין כל הדירות: ${d.totalDiff>=0?'+':''}₪${d.totalDiff.toFixed(2)}`,
+    `📟 אחוז הצריכה שלך מתוך הכל: ${(share.proportion*100).toFixed(1)}%`,
+    ``,
+    `━━━━━━━━━━━━━━━━`,
+    `💳 ${share.amount>=0?'לתשלום נוסף':'להחזר עבורך'}: ₪${Math.abs(share.amount).toFixed(2)}`,
+    `━━━━━━━━━━━━━━━━`
+  ].join('\n');
+}
+
+function previewSettlementMsg(aptId) {
+  const a = APTS.find(x=>x.id===aptId);
+  const msg = buildSettlementMsg(aptId);
+  currentMsgText = msg;
+  document.getElementById('msg-preview-title').textContent = `התחשבנות — ${a.name}`;
+  document.getElementById('msg-preview-text').textContent = msg;
+  document.getElementById('msg-whatsapp-btn').onclick = () => sendSettlementMsg(aptId);
+  document.getElementById('msg-whatsapp-btn').innerHTML = `<i class="ti ti-brand-whatsapp" aria-hidden="true" style="margin-left:6px"></i>שלח ל${a.name} בוואטסאפ`;
+  document.getElementById('msg-back-btn').onclick = () => showScreen('screen-home-recon');
+  document.getElementById('msg-back-btn2').onclick = () => showScreen('screen-home-recon');
+  showScreen('screen-msg-preview');
+}
+
+function sendSettlementMsg(aptId) {
+  window.open(`https://wa.me/?text=${encodeURIComponent(buildSettlementMsg(aptId))}`,'_blank');
 }
 
 function renderReportsList() {
@@ -843,7 +972,7 @@ function buildFullOwnerReport() {
   const totalCo=readings.reduce((s,r)=>s+r.companyTotal,0);
   const totalBill=readings.reduce((s,r)=>s+Object.values(r.bills).reduce((a,b)=>a+b,0),0);
   lines.push('━━━━━━━━━━━━━━━━');
-  lines.push(`סה"כ שולם לחברה: ₪${totalCo.toFixed(2)}`);
+  lines.push(`סה"כ שולם לחברת חשמל: ₪${totalCo.toFixed(2)}`);
   lines.push(`סה"כ נגבה מדיירים: ₪${totalBill.toFixed(2)}`);
   lines.push(`הפרש מצטבר: ${(totalBill-totalCo)>=0?'+':''}₪${(totalBill-totalCo).toFixed(2)}`);
   return lines.join('\n');
@@ -860,19 +989,12 @@ function sendFullOwnerReport() {
 }
 
 function sendOwnerReconReport() {
-  const readings=state.readings.filter(r=>!r.isBaseline);
-  let totalCompany=0;const totalBilled={noam:0,gil:0,ayal:0};const totalConsumptionCost={noam:0,gil:0,ayal:0};
-  readings.forEach(r=>{
-    totalCompany+=r.companyTotal;
-    APTS.forEach(a=>{
-      totalBilled[a.id]+=r.bills[a.id];
-      totalConsumptionCost[a.id]+=r.consumption[a.id]*(r.kwhPrice||0);
-    });
-  });
-  const totalBilledSum = Object.values(totalBilled).reduce((a,b)=>a+b,0);
-  const totalDiff = totalBilledSum - totalCompany;
-  const lines=['דוח התחשבנות שנתית — חשמל מיה כהן',''];
-  lines.push(`💡 סה"כ שולם לחברת החשמל: ₪${totalCompany.toFixed(2)}`);
+  const readings = getOpenReadings();
+  const {totalCompany, totalBilled, totalConsumptionCost, totalBilledSum, totalDiff} = computeReconTotals(readings);
+  const lastSettlement = state.settlements.length > 0 ? state.settlements[state.settlements.length-1] : null;
+  const lines=['דוח התחשבנות — חשמל מיה כהן',''];
+  if(lastSettlement) lines.push(`(מאז ההתחשבנות האחרונה ב-${formatDate(lastSettlement.date)})`, '');
+  lines.push(`💡 סה"כ שולם לחברת חשמל: ₪${totalCompany.toFixed(2)}`);
   lines.push(`💳 סה"כ נגבה מדיירים: ₪${totalBilledSum.toFixed(2)}`);
   lines.push(`📊 הפרש כולל: ${totalDiff>=0?'+':''}₪${totalDiff.toFixed(2)}`);
   lines.push('');
@@ -885,7 +1007,7 @@ function sendOwnerReconReport() {
       lines.push(`${a.name} (${(proportion*100).toFixed(1)}% מהצריכה): ${aptShareOfDiff>=0?'לתשלום נוסף':'להחזר'} ₪${Math.abs(aptShareOfDiff).toFixed(2)}`);
     });
   } else {
-    lines.push('אין הפרש משמעותי השנה — הכל מאוזן.');
+    lines.push('אין הפרש משמעותי כרגע — הכל מאוזן.');
   }
   const phone=state.ownerPhone;
   const msg=lines.join('\n');
@@ -938,6 +1060,7 @@ function importData(event) {
     try{
       state=JSON.parse(e.target.result);
       if(state.vatRate===undefined)state.vatRate=18;
+      if(state.settlements===undefined)state.settlements=[];
       recalcAllDays();
       save();renderAll();
       document.getElementById('owner-phone').value=state.ownerPhone||'';
