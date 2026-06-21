@@ -527,6 +527,39 @@ body { direction: rtl; font-family: var(--font-sans); padding-top: env(safe-area
       <div class="card-title"><i class="ti ti-scale" aria-hidden="true"></i> מה זה "התחשבנות"? (לא בכל פעם)</div>
       <p style="font-size:14px;color:var(--color-text-secondary);line-height:1.7">מדי כמה חודשים, דני יבקש ממך לסגור "התחשבנות" — זה צעד נפרד שדני יסביר בזמנו, ולא חלק מהשגרה הרגילה של קריאת מונים.</p>
     </div>
+
+    <button class="btn" onclick="showScreen(&#39;screen-install&#39;)"><i class="ti ti-device-mobile" aria-hidden="true" style="margin-left:6px"></i>איך מתקינים את האפליקציה על הטלפון</button>
+  </div>
+</div>
+
+<div id="screen-install" class="screen">
+  <div class="topbar">
+    <button class="back-btn" onclick="showScreen(&#39;screen-home&#39;)"><i class="ti ti-arrow-right" aria-hidden="true"></i><span style="font-size:20px;line-height:1">→</span></button>
+    <h1>התקנה על הטלפון</h1>
+  </div>
+  <div class="section">
+    <div class="alert alert-info">צריך לעשות את זה רק פעם אחת — אחרי ההתקנה, פותחים את האפליקציה מהאייקון על מסך הבית, בלי לעבור דרך הדף הזה שוב.</div>
+
+    <div class="card">
+      <div class="card-title"><span style="font-size:18px">🤖</span> טלפון אנדרואיד</div>
+      <p style="font-size:14px;color:var(--color-text-secondary);line-height:1.7;margin-bottom:0.5rem">1. פותחים את הדף הזה ב-<strong>Chrome</strong></p>
+      <p style="font-size:14px;color:var(--color-text-secondary);line-height:1.7;margin-bottom:0.5rem">2. לוחצים על שלוש הנקודות (⋮) בפינה הימנית העליונה</p>
+      <p style="font-size:14px;color:var(--color-text-secondary);line-height:1.7;margin-bottom:0.5rem">3. לוחצים על <strong>"הוספה למסך הבית"</strong> (Add to Home screen) — לפעמים זה מופיע גם כהצעה אוטומטית למעלה</p>
+      <p style="font-size:14px;color:var(--color-text-secondary);line-height:1.7">4. מאשרים את השם ולוחצים <strong>"הוסף"</strong></p>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span style="font-size:18px">🍏</span> אייפון</div>
+      <p style="font-size:14px;color:var(--color-text-secondary);line-height:1.7;margin-bottom:0.5rem">1. פותחים את הדף הזה ב-<strong>Safari</strong> (חובה ספארי, לא דפדפן אחר)</p>
+      <p style="font-size:14px;color:var(--color-text-secondary);line-height:1.7;margin-bottom:0.5rem">2. לוחצים על כפתור השיתוף (הריבוע עם החץ למעלה) בתחתית המסך</p>
+      <p style="font-size:14px;color:var(--color-text-secondary);line-height:1.7;margin-bottom:0.5rem">3. גוללים ובוחרים <strong>"הוסף למסך הבית"</strong> (Add to Home Screen)</p>
+      <p style="font-size:14px;color:var(--color-text-secondary);line-height:1.7">4. לוחצים <strong>"הוסף"</strong> בפינה הימנית העליונה</p>
+    </div>
+
+    <div class="card" style="border-color:var(--accent-rust)">
+      <div class="card-title"><i class="ti ti-alert-triangle" aria-hidden="true" style="color:var(--accent-rust)"></i> חשוב לדעת</div>
+      <p style="font-size:14px;color:var(--color-text-secondary);line-height:1.7">לאחר ההתקנה יופיע אייקון חדש על מסך הבית עם סמל ברק כתום ⚡ — זו האפליקציה. כל הנתונים נשמרים על הטלפון הזה בלבד, ולכן חשוב לשלוח גיבוי לדני מדי פעם (ראו "מדריך שימוש", שלב 6).</p>
+    </div>
   </div>
 </div>
 
@@ -595,6 +628,9 @@ function load() {
   renderAll();
   document.getElementById('owner-phone').value = state.ownerPhone || '';
   document.getElementById('vat-rate').value = state.vatRate;
+  if(window.location.hash === '#install') {
+    showScreen('screen-install');
+  }
 }
 
 function recalcAllDays() {
